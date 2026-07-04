@@ -8,20 +8,34 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "A.Eliver Frozen Products Trading | Bacolod's Trusted Frozen Food Wholesaler",
+  metadataBase: new URL("https://aeliver-frozen.vercel.app"),
+  title: {
+    default: "A.Eliver Frozen Products Trading | Bacolod City Frozen Food Wholesaler",
+    template: "%s | A.Eliver Frozen Products Trading Bacolod",
+  },
   description:
-    "A.Eliver Frozen Products Trading - Your trusted frozen food supplier in Bacolod City. We offer premium frozen products from top brands like San Miguel, CDO, Virginia, and more at wholesale prices. Contact us for hotdogs, tocino, longganisa, bacon, nuggets, and other frozen goods.",
+    "A.Eliver Frozen Products Trading - Bacolod City's trusted frozen food wholesaler since 2018. We supply premium frozen products including hotdogs, tocino, longganisa, bacon, nuggets, and seafood from top brands like San Miguel, CDO, Tender Juicy, Virginia, and more. Wholesale prices for Bacolod businesses.",
   keywords: [
-    "frozen food supplier Bacolod",
-    "frozen products wholesaler",
+    "frozen food Bacolod",
+    "frozen products Bacolod City",
+    "Bacolod frozen food supplier",
+    "Bacolod frozen food wholesaler",
+    "frozen food trading Bacolod",
+    "wholesale frozen food Bacolod",
     "A.Eliver Frozen Products",
-    "Bacolod frozen food",
-    "wholesale frozen food Philippines",
-    "San Miguel Pure Foods",
-    "CDO products",
-    "Tender Juicy hotdogs",
-    "frozen meat supplier",
+    "Aeliver Frozen Bacolod",
+    "frozen meat supplier Bacolod",
+    "hotdog supplier Bacolod",
     "tocino longganisa Bacolod",
+    "CDO products Bacolod",
+    "San Miguel Pure Foods Bacolod",
+    "Tender Juicy Bacolod distributor",
+    "Virginia products Bacolod",
+    "frozen seafood Bacolod",
+    "processed meat Bacolod City",
+    "Negros Occidental frozen food",
+    "Bacolod food distributor",
+    "wholesale food supplier Bacolod",
   ],
   authors: [{ name: "A.Eliver Frozen Products Trading" }],
   creator: "A.Eliver Frozen Products Trading",
@@ -29,53 +43,67 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
   openGraph: {
     type: "website",
     locale: "en_PH",
-    url: "https://www.facebook.com/A.EliverFrozen",
+    url: "https://aeliver-frozen.vercel.app",
     siteName: "A.Eliver Frozen Products Trading",
-    title: "A.Eliver Frozen Products Trading | Bacolod's Trusted Frozen Food Wholesaler",
+    title: "A.Eliver Frozen Products Trading | Bacolod City Frozen Food Wholesaler",
     description:
-      "Your trusted frozen food supplier in Bacolod City. Premium frozen products from top brands at wholesale prices.",
+      "Bacolod City's trusted frozen food wholesaler since 2018. Premium frozen products at wholesale prices. Hotdogs, tocino, longganisa, bacon, nuggets, seafood and more.",
     images: [
       {
-        url: "/images/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "A.Eliver Frozen Products Trading",
+        url: "/images/logo.png",
+        width: 800,
+        height: 800,
+        alt: "A.Eliver Frozen Products Trading - Bacolod Frozen Food Supplier",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "A.Eliver Frozen Products Trading",
+    title: "A.Eliver Frozen Products Trading | Bacolod Frozen Food Wholesaler",
     description:
-      "Bacolod's trusted frozen food wholesaler. Quality products at wholesale prices.",
-    images: ["/images/og-image.jpg"],
-  },
-  verification: {
-    google: "",
+      "Bacolod City's trusted frozen food wholesaler since 2018. Premium frozen products at wholesale prices.",
+    images: ["/images/logo.png"],
   },
   alternates: {
-    canonical: "https://www.facebook.com/A.EliverFrozen",
+    canonical: "https://aeliver-frozen.vercel.app",
   },
+  category: "Food & Beverage",
+  classification: "Frozen Food Wholesaler",
 };
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
+  "@id": "https://aeliver-frozen.vercel.app",
   name: "A.Eliver Frozen Products Trading",
-  image: "/images/logo.png",
-  "@id": "https://www.facebook.com/A.EliverFrozen",
-  url: "https://www.facebook.com/A.EliverFrozen",
+  alternateName: ["Aeliver Frozen Products", "A Eliver Frozen Bacolod"],
+  description:
+    "Bacolod City's trusted frozen food wholesaler since 2018. We supply premium frozen products including hotdogs, tocino, longganisa, bacon, nuggets, and seafood from top Philippine brands at wholesale prices.",
+  url: "https://aeliver-frozen.vercel.app",
   telephone: "+63-954-412-8989",
+  email: "",
+  image: "/images/logo.png",
+  logo: "/images/logo.png",
+  priceRange: "$$",
+  currenciesAccepted: "PHP",
+  paymentAccepted: "Cash, GCash, Bank Transfer",
   address: {
     "@type": "PostalAddress",
     streetAddress: "",
     addressLocality: "Bacolod City",
     addressRegion: "Negros Occidental",
-    postalCode: "",
+    postalCode: "6100",
     addressCountry: "PH",
   },
   geo: {
@@ -83,17 +111,124 @@ const jsonLd = {
     latitude: 10.6765,
     longitude: 122.9509,
   },
-  openingHoursSpecification: {
-    "@type": "OpeningHoursSpecification",
-    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-    opens: "08:00",
-    closes: "18:00",
+  areaServed: [
+    {
+      "@type": "City",
+      name: "Bacolod City",
+    },
+    {
+      "@type": "State",
+      name: "Negros Occidental",
+    },
+  ],
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      opens: "08:00",
+      closes: "18:00",
+    },
+  ],
+  sameAs: [
+    "https://www.facebook.com/A.EliverFrozen",
+    "https://m.me/A.EliverFrozen",
+  ],
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: "+63-954-412-8989",
+    contactType: "sales",
+    areaServed: "PH",
+    availableLanguage: ["English", "Filipino", "Hiligaynon"],
+  },
+  founder: {
+    "@type": "Person",
+    name: "Angelie Balinas Eliver-Braca",
+  },
+  foundingDate: "2018",
+  numberOfEmployees: {
+    "@type": "QuantitativeValue",
+    minValue: 1,
+    maxValue: 10,
+  },
+  knowsAbout: [
+    "Frozen Food Distribution",
+    "Wholesale Food Supply",
+    "Frozen Meat Products",
+    "Processed Food",
+  ],
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Frozen Products Catalog",
+    itemListElement: [
+      {
+        "@type": "OfferCatalog",
+        name: "Processed Meats",
+        itemListElement: [
+          { "@type": "Offer", itemOffered: { "@type": "Product", name: "Hotdogs" } },
+          { "@type": "Offer", itemOffered: { "@type": "Product", name: "Tocino" } },
+          { "@type": "Offer", itemOffered: { "@type": "Product", name: "Longganisa" } },
+          { "@type": "Offer", itemOffered: { "@type": "Product", name: "Bacon" } },
+          { "@type": "Offer", itemOffered: { "@type": "Product", name: "Ham" } },
+        ],
+      },
+      {
+        "@type": "OfferCatalog",
+        name: "Frozen Ready-to-Cook",
+        itemListElement: [
+          { "@type": "Offer", itemOffered: { "@type": "Product", name: "Nuggets" } },
+          { "@type": "Offer", itemOffered: { "@type": "Product", name: "Patties" } },
+          { "@type": "Offer", itemOffered: { "@type": "Product", name: "Frozen Seafood" } },
+        ],
+      },
+    ],
+  },
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "4.8",
+    reviewCount: "46000",
+    bestRating: "5",
+    worstRating: "1",
+  },
+};
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://aeliver-frozen.vercel.app",
+    },
+  ],
+};
+
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "A.Eliver Frozen Products Trading",
+  url: "https://aeliver-frozen.vercel.app",
+  logo: "/images/logo.png",
+  foundingDate: "2018",
+  founders: [
+    {
+      "@type": "Person",
+      name: "Angelie Balinas Eliver-Braca",
+    },
+  ],
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Bacolod City",
+    addressRegion: "Negros Occidental",
+    addressCountry: "Philippines",
+  },
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: "+63-954-412-8989",
+    contactType: "Customer Service",
   },
   sameAs: ["https://www.facebook.com/A.EliverFrozen"],
-  priceRange: "$$",
-  servesCuisine: "Frozen Food Products",
-  description:
-    "A.Eliver Frozen Products Trading is Bacolod City's trusted frozen food wholesaler, offering premium frozen products from top Philippine brands at competitive wholesale prices.",
 };
 
 export default function RootLayout({
@@ -105,11 +240,23 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} scroll-smooth`}>
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        <meta name="theme-color" content="#E91E63" />
+        <link rel="apple-touch-icon" href="/images/logo.png" />
+        <meta name="theme-color" content="#9C27B0" />
+        <meta name="geo.region" content="PH-NEC" />
+        <meta name="geo.placename" content="Bacolod City" />
+        <meta name="geo.position" content="10.6765;122.9509" />
+        <meta name="ICBM" content="10.6765, 122.9509" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
         />
       </head>
       <body className="min-h-screen antialiased">{children}</body>
