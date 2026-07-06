@@ -101,6 +101,8 @@ const Footer = () => {
                 <span className="block text-white font-medium">Phone</span>
                 Globe: 09544128989
                 <br />
+                Smart: 09752618594
+                <br />
                 Landline: 4321363
               </li>
               <li>

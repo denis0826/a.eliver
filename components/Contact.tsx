@@ -16,7 +16,7 @@ const contactInfo = [
   {
     icon: Phone,
     label: "Phone Numbers",
-    values: ["Globe: 09544128989", "Landline: 4321363"],
+    values: ["Globe: 09544128989", "Smart: 09752618594", "Landline: 4321363"],
   },
   {
     icon: MapPin,
@@ -148,6 +148,44 @@ const Contact = () => {
             </div>
           </motion.div>
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.5 }}
+          className="mt-16"
+        >
+          <h3 className="text-2xl font-bold text-white text-center mb-6">
+            Find Us on the Map
+          </h3>
+          <div className="bg-gradient-to-br from-pink-500 via-purple-500 to-cyan-500 rounded-3xl p-1">
+            <div className="rounded-3xl overflow-hidden">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3920.123456789!2d122.9687492!3d10.7000235!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33aed1d167401477%3A0xb4cd28ac2313a9b9!2sAeliver%20Frozen%20Foods!5e0!3m2!1sen!2sph!4v1234567890"
+                width="100%"
+                height="400"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="A.Eliver Frozen Products Trading Location"
+                className="w-full"
+              />
+            </div>
+          </div>
+          <div className="text-center mt-4">
+            <a
+              href="https://www.google.com/maps/place/Aeliver+Frozen+Foods/@10.7000235,122.9687492,17z/data=!3m1!4b1!4m6!3m5!1s0x33aed1d167401477:0xb4cd28ac2313a9b9!8m2!3d10.7000182!4d122.9713241!16s%2Fg%2F11pwvb7155"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 transition-colors"
+              aria-label="Open in Google Maps"
+            >
+              <MapPin className="w-4 h-4" />
+              Open in Google Maps
+            </a>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

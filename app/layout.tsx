@@ -91,7 +91,7 @@ const jsonLd = {
   description:
     "Bacolod City's trusted frozen food wholesaler since 2018. We supply premium frozen products including hotdogs, tocino, longganisa, bacon, nuggets, and seafood from top Philippine brands at wholesale prices.",
   url: "https://aeliver-frozen.vercel.app",
-  telephone: "+63-954-412-8989",
+  telephone: ["+63-954-412-8989", "+63-975-261-8594"],
   email: "",
   image: "/images/logo.png",
   logo: "/images/logo.png",
@@ -108,8 +108,8 @@ const jsonLd = {
   },
   geo: {
     "@type": "GeoCoordinates",
-    latitude: 10.6765,
-    longitude: 122.9509,
+    latitude: 10.7000182,
+    longitude: 122.9713241,
   },
   areaServed: [
     {
@@ -135,7 +135,7 @@ const jsonLd = {
   ],
   contactPoint: {
     "@type": "ContactPoint",
-    telephone: "+63-954-412-8989",
+    telephone: ["+63-954-412-8989", "+63-975-261-8594"],
     contactType: "sales",
     areaServed: "PH",
     availableLanguage: ["English", "Filipino", "Hiligaynon"],
@@ -225,7 +225,7 @@ const organizationJsonLd = {
   },
   contactPoint: {
     "@type": "ContactPoint",
-    telephone: "+63-954-412-8989",
+    telephone: ["+63-954-412-8989", "+63-975-261-8594"],
     contactType: "Customer Service",
   },
   sameAs: ["https://www.facebook.com/A.EliverFrozen"],
@@ -244,8 +244,8 @@ export default function RootLayout({
         <meta name="theme-color" content="#9C27B0" />
         <meta name="geo.region" content="PH-NEC" />
         <meta name="geo.placename" content="Bacolod City" />
-        <meta name="geo.position" content="10.6765;122.9509" />
-        <meta name="ICBM" content="10.6765, 122.9509" />
+        <meta name="geo.position" content="10.7000182;122.9713241" />
+        <meta name="ICBM" content="10.7000182, 122.9713241" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
