@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 const inter = Inter({
@@ -7,8 +8,10 @@ const inter = Inter({
   variable: "--font-geist-sans",
 });
 
+const GA_MEASUREMENT_ID = "G-N0WWKMEW5T";
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://aeliver-frozen.vercel.app"),
+  metadataBase: new URL("https://aeliverfrozenproductstrading.com"),
   title: {
     default: "A.Eliver Frozen Products Trading | Bacolod City Frozen Food Wholesaler",
     template: "%s | A.Eliver Frozen Products Trading Bacolod",
@@ -54,7 +57,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_PH",
-    url: "https://aeliver-frozen.vercel.app",
+    url: "https://aeliverfrozenproductstrading.com",
     siteName: "A.Eliver Frozen Products Trading",
     title: "A.Eliver Frozen Products Trading | Bacolod City Frozen Food Wholesaler",
     description:
@@ -76,7 +79,7 @@ export const metadata: Metadata = {
     images: ["/images/logo.png"],
   },
   alternates: {
-    canonical: "https://aeliver-frozen.vercel.app",
+    canonical: "https://aeliverfrozenproductstrading.com",
   },
   category: "Food & Beverage",
   classification: "Frozen Food Wholesaler",
@@ -85,12 +88,12 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "@id": "https://aeliver-frozen.vercel.app",
+  "@id": "https://aeliverfrozenproductstrading.com",
   name: "A.Eliver Frozen Products Trading",
   alternateName: ["Aeliver Frozen Products", "A Eliver Frozen Bacolod"],
   description:
     "Bacolod City's trusted frozen food wholesaler since 2018. We supply premium frozen products including hotdogs, tocino, longganisa, bacon, nuggets, and seafood from top Philippine brands at wholesale prices.",
-  url: "https://aeliver-frozen.vercel.app",
+  url: "https://aeliverfrozenproductstrading.com",
   telephone: ["+63-954-412-8989", "+63-975-261-8594"],
   email: "",
   image: "/images/logo.png",
@@ -199,7 +202,7 @@ const breadcrumbJsonLd = {
       "@type": "ListItem",
       position: 1,
       name: "Home",
-      item: "https://aeliver-frozen.vercel.app",
+      item: "https://aeliverfrozenproductstrading.com",
     },
   ],
 };
@@ -208,7 +211,7 @@ const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "A.Eliver Frozen Products Trading",
-  url: "https://aeliver-frozen.vercel.app",
+  url: "https://aeliverfrozenproductstrading.com",
   logo: "/images/logo.png",
   foundingDate: "2018",
   founders: [
@@ -239,8 +242,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} scroll-smooth`}>
       <head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="apple-touch-icon" href="/images/logo.png" />
+        <link rel="icon" type="image/png" href="/favicon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon.png" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <meta name="theme-color" content="#9C27B0" />
         <meta name="geo.region" content="PH-NEC" />
         <meta name="geo.placename" content="Bacolod City" />
@@ -259,7 +264,22 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
         />
       </head>
-      <body className="min-h-screen antialiased">{children}</body>
+      <body className="min-h-screen antialiased">
+        {/* Google Analytics */}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_MEASUREMENT_ID}');
+          `}
+        </Script>
+        {children}
+      </body>
     </html>
   );
 }
